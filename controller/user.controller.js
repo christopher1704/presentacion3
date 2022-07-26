@@ -31,8 +31,7 @@ const createUser =  async (req,res = response) =>{
         await user.save();
 
         res.json({
-            ok : true,
-            user : user
+            user
         })
 
         
@@ -67,8 +66,6 @@ const deleteUser = async (req,res = response) => {
     try {
 
         const uid = req.params.id;
-
-        console.log("entre");
 
         const userDB =  await User.findById(uid);
         if(!userDB){
